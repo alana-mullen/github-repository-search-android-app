@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RepoListFragment">
+
+    <fragment
+        android:id="@+id/RepoListFragment"
+        android:name="co.uk.thewirelessguy.githubrepositorysearch.ui.RepoListFragment"
+        android:label="@string/menu_repo_list"
+        tools:layout="@layout/fragment_repo_list" >
+        <action
+            android:id="@+id/action_open_repo_detail"
+            app:destination="@id/RepoDetailFragment" />
+    </fragment>
+
+    <fragment android:id="@+id/RepoDetailFragment"
+        android:name="co.uk.thewirelessguy.githubrepositorysearch.ui.RepoDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_repo_detail">
+        <argument
+            android:name="title"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="user"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="repo"
+            android:defaultValue='""'
+            app:argType="string" />
+    </fragment>
+
+</navigation>
